@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  height: 50px;
+  background: #93c963;
+}
+@media all and (min-width: 465px) and (max-width: 600px) {
+  .section {
+    flex-direction: column;
+  }
+}
+.box {
+  margin: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.box div {
+  width: 19%;
+  height: 200px;
+  background: #93c963;
+  margin-top: 15px;
+}
+@media all and (min-width: 465px) and (max-width: 600px) {
+  .box div {
+    width: 100%;
+  }
+}
+.section1 {
+  margin: 15px;
+  display: flex;
+}
+@media all and (min-width: 465px) and (max-width: 600px) {
+  .section1 {
+    flex-direction: column;
+  }
+}
+.article1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+.article1 .item {
+  display: flex;
+  margin: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+.article1 .item:last-child {
+  border-bottom: none;
+}
+.article1 .item span {
+  margin-left: 10px;
+}
+@media all and (min-width: 465px) and (max-width: 600px) {
+  .article1 {
+    margin: 0;
+    border-bottom: none;
+  }
+  .article1 .item {
+    flex-direction: column;
+  }
+}
+.article2 {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  padding: 10px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+}
+.article2 .item {
+  display: flex;
+  margin: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+.article2 .item:last-child {
+  border-bottom: none;
+}
+.article2 .item span {
+  margin-right: 10px;
+}
+@media all and (min-width: 465px) and (max-width: 600px) {
+  .article2 {
+    margin: 0;
+  }
+  .article2 .item {
+    flex-direction: column-reverse;
+  }
+}
+.section2 {
+  display: flex;
+}
+@media all and (min-width: 465px) and (max-width: 600px) {
+  .section2 {
+    flex-direction: column;
+  }
+}
+.article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px;
+  border: 1px solid #ccc;
+}
+.article .item,
+.article .item1 {
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.article .item span,
+.article .item1 span {
+  margin-top: 10px;
+}
+.article:hover .block {
+  display: block;
+  opacity: 0.8;
+}
+@media all and (min-width: 465px) and (max-width: 600px) {
+  .article {
+    margin: 0 15px;
+  }
+  .article:first-child {
+    border-bottom: none;
+  }
+  .article:last-child {
+    margin-bottom: 15px;
+  }
+  .article .item {
+    border: none;
+    padding: 0;
+    flex-direction: row;
+  }
+  .article .item img {
+    margin-right: 10px;
+  }
+  .article .item1 {
+    border: none;
+    padding: 0;
+    flex-direction: row-reverse;
+  }
+  .article .item1 img {
+    margin-left: 10px;
+  }
+}
+.block {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background: #ccc;
+  display: none;
+}

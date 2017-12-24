@@ -1,0 +1,164 @@
+@bgcolor: #93c963;
+@gray: #ccc;
+.flexible() {
+	display: flex;
+	flex-direction: column;
+}
+.border() {
+	border: 1px solid #ccc;
+}
+.screenSmall(@rules) {
+	@media all and (min-width: 465px) and (max-width: 600px) {
+		@rules();
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+.header {
+	height: 50px;
+	background: @bgcolor;
+}
+.section {
+	.screenSmall({
+		flex-direction: column;
+	})
+}
+.box {
+	margin: 0 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	& div {
+		width: 19%;
+		height: 200px;
+		background: @bgcolor;
+		margin-top: 15px;
+	}
+	.screenSmall({
+		& div {
+			width: 100%;
+		}
+	})
+}
+.section1 {
+	margin: 15px;
+	display: flex;
+	.screenSmall({
+		flex-direction: column;
+	})
+}
+.article1 {
+	.flexible();
+	flex: 1;
+	padding: 10px;
+	margin-right: 10px;
+	.border();
+	& .item {
+		display: flex;
+		margin: 10px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid @gray;
+		&:last-child {
+			border-bottom: none;
+		}
+		& span {
+			margin-left: 10px;
+		}
+	}
+	.screenSmall({
+		margin: 0;
+		border-bottom: none;
+		& .item {
+			flex-direction: column;
+		}
+	})
+}
+.article2 {
+	.flexible();
+	flex: 2;
+	padding: 10px;
+	margin-left: 10px;
+	.border();
+	& .item {
+		display: flex;
+		margin: 10px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid @gray;
+		&:last-child {
+			border-bottom: none;
+		}
+		& span {
+			margin-right: 10px;
+		}
+	}
+	.screenSmall({
+		margin: 0;
+		& .item {
+			flex-direction: column-reverse;
+		}
+	})
+}
+.section2 {
+	display: flex;
+	.screenSmall({
+		flex-direction: column;
+	})
+}
+.article {
+	position: relative;
+	.flexible();
+	padding: 20px;
+	margin: 15px;
+	.border();
+	& .item,
+	& .item1 {
+		border: 1px solid @gray;
+		display: flex;
+		.flexible ();
+		padding: 15px;
+		& span {
+			margin-top: 10px;
+		}	
+	}
+	&:hover .block {
+		display: block;
+		opacity: 0.8;
+	}
+	.screenSmall({
+		margin: 0 15px;
+		&:first-child {
+			border-bottom: none;
+		}
+		&:last-child {
+			margin-bottom: 15px;
+		}
+		& .item {
+			border: none;
+			padding: 0;
+			flex-direction: row;
+			& img {
+				margin-right: 10px;
+			}
+		}
+		& .item1 {
+			border: none;
+			padding: 0;
+			flex-direction: row-reverse;
+			& img {
+				margin-left: 10px;
+			}
+		} 
+	})
+}
+.block {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	background: @gray;
+	display: none;
+}
